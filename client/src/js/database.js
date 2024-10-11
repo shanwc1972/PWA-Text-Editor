@@ -14,12 +14,13 @@ const initdb = async () =>
 
 // Function below uses the PUT method to accepts some content and adds it to the Indexed DB
 export const putDb = async (content) => {
-  console.error('PUT into the database');
+  console.log('PUT into the database');
+  console.log(content);
 
   const jateDb = await openDB('jate', 1); //creating our connection
   const txn = jateDb.transaction('jate', 'readwrite'); //new txn from DB with Readwrite privs
-  const store = txn.ObjectStore('jate'); //Setup object store
-  const req = store.put({ jate: content }); //Setup an put request
+  const store = txn.objectStore('jate'); //Setup object store
+  const req = store.put({ value: content}); //Setup an put request
 
   //Submit our request and await a result 
   const res = await req;
@@ -29,11 +30,11 @@ export const putDb = async (content) => {
 
 // The function below GET method to retrieve data from the Indexed DB
 export const getDb = async () => {
-  console.error('GET from the database');
+  console.log('GET from the database');
   
   const jateDb = await openDB('jate', 1); //creating our connection
   const txn = jateDb.transaction('jate', 'readonly'); //new txn from DB with Readonly privs
-  const store = txn.ObjectStore('jate'); //Setup object store
+  const store = txn.objectStore('jate'); //Setup object store
   const req = store.getAll(); //Setup a getAll() request
 
   //Submit our request and await a result 
