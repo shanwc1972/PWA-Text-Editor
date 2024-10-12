@@ -15,12 +15,11 @@ const initdb = async () =>
 // Function below uses the PUT method to accepts some content and adds it to the Indexed DB
 export const putDb = async (content) => {
   console.log('PUT into the database');
-  console.log(content);
 
   const jateDb = await openDB('jate', 1); //creating our connection
   const txn = jateDb.transaction('jate', 'readwrite'); //new txn from DB with Readwrite privs
   const store = txn.objectStore('jate'); //Setup object store
-  const req = store.put({ value: content}); //Setup an put request
+  const req = store.put({ id: 1, value: content}); //Setup an put request
 
   //Submit our request and await a result 
   const res = await req;
@@ -39,8 +38,12 @@ export const getDb = async () => {
 
   //Submit our request and await a result 
   const res = await req;
-  console.log('result.value', res);
-  return res;
+  const resAsObj = res.reduce((acc, item) => {
+    acc[item.id] = item;
+    return acc;
+  }, {});
+  console.log('result.value', resAsObj);
+  return resAsObj;
 };
 
 initdb();
