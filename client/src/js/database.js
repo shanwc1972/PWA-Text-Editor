@@ -34,16 +34,11 @@ export const getDb = async () => {
   const jateDb = await openDB('jate', 1); //creating our connection
   const txn = jateDb.transaction('jate', 'readonly'); //new txn from DB with Readonly privs
   const store = txn.objectStore('jate'); //Setup object store
-  const req = store.getAll(); //Setup a getAll() request
+  const req = store.get(1); //Setup a getAll() request
 
   //Submit our request and await a result 
   const res = await req;
-  const resAsObj = res.reduce((acc, item) => {
-    acc[item.id] = item;
-    return acc;
-  }, {});
-  console.log('result.value', resAsObj);
-  return resAsObj;
+  console.log('Data successfully retrieved from the database', res);
 };
 
 initdb();

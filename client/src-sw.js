@@ -35,9 +35,6 @@ registerRoute(
       new CacheableResponsePlugin({
         statuses: [0, 200], // Cache responses with status 0 or 200
       }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 7 * 24 * 60 * 60, // Cache assets for 7 days
-      }),
     ],
   })
 );
