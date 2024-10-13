@@ -9,7 +9,11 @@
 6. [Tests](#tests)
 
 ## Description
-This is a single-page application of a text editor, called Just Another Text Editor (JATE), that runs within a browser and meets the criteria of a Progressive Web Application (PWA).  This application is developed to provide users a means of creating and storing notes or code snippets, with or without an internet connection, so that they can reliably retrieve them for later use. The application is deployed on Render and should also function offline. A screenshot of the application can be found below:
+This is a single-page application of a text editor, called Just Another Text Editor (JATE), that runs within a browser and meets the criteria of a Progressive Web Application (PWA).  This application is developed to provide users a means of creating and storing notes or code snippets, with or without an internet connection, so that they can reliably retrieve them for later use. A screenshot of the application can be found below:  
+![JATE Screenshot](https://github.com/user-attachments/assets/b6b2a931-7417-4cb2-b35d-c7768eb7f297)
+
+The application is deployed on Render and should also function offline. The app can be found at:  
+https://pwa-text-editor-un22.onrender.com/
 
 ---
 
@@ -22,7 +26,7 @@ Usage of J.A.T.E. although simple once you understand the concept behind it, may
   
 J.A.T.E essentially only services the one note. Saving your note requires that the application loses focus in order to do so. In other words, you need to click off the body of the application in order for your note to be saved.  
 
-Once you have doe so, your note is, however, stored within the IndexedDB Database. Hence your note will not be lost if you close your browser, or the app itself.  
+Once you have do so, your note is, however, stored within the IndexedDB Database. Hence your note will not be lost if you close your browser, or the app itself.  
 
 The IndexedDB 'backend' though, does service the methods of GET and PUT. In principle, application development tools such a Insomnia and Postman can employ those methods using this app, although the utility of such would be minimal.  
 
