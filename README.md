@@ -18,7 +18,9 @@ https://pwa-text-editor-un22.onrender.com/
 ---
 
 ## Installation
-As a PWA, installation of JATE depends on the capability of your browser. For most browsers, simply visit the application link and once the application opens, click on the Black Install button in the upper left hand corner. You will be prompted if you want to install JATE. Click OK and you are done. JATE should appear as an installed app on your computer thereafter.
+As a PWA, installation of JATE depends on the capability of your browser. For most browsers, simply visit the application link and once the application opens, click on the Black Install button in the upper left hand corner. You will be prompted if you want to install JATE. Click OK and you are done. JATE should appear as an installed app on your computer thereafter. 
+
+For Chromium-based browsers only: you can subsequently uninstall JATE by clicking on the three dots to the right and select "Uninstall Just Another Text Editor".
   
 ---
 ## Usage
